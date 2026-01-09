@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق السياحة الريفية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --primary-yellow: #c5ac3b;
+            --text-color: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 10px;
+            color: var(--text-color);
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5px;
+        }
+        .menu-icon, .arrow-icon {
+            font-size: 24px;
+            color: var(--primary-yellow);
+            cursor: pointer;
+        }
+
+        /* Hero Image */
+        .hero-section img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            gap: 5px;
+        }
+        .tab {
+            padding: 8px 15px;
+            border-radius: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tab.active {
+            background-color: var(--primary-yellow);
+            color: white;
+        }
+
+        /* Map Section */
+        .map-section {
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 2px solid white;
+        }
+
+        /* Horizontal Scrolling Sections */
+        .section-title {
+            font-weight: 700;
+            margin: 15px 5px 10px;
+            color: var(--primary-yellow);
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 10px;
+            scrollbar-width: none; /* للهواتف */
+        }
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+        .card {
+            min-width: 120px;
+            height: 120px;
+            background-color: #eee;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Footer Image */
+        .footer-banner {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .footer-banner img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .footer-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--primary-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+        <div class="arrow-icon"><i class="fas fa-arrow-left"></i></div>
+    </header>
+
+    <div class="hero-section">
+        <img src="ورشة لبنة.png" alt="ورشة لبنة">
+    </div>
+
+    <div class="tabs-container">
+        <div class="tab active">بالقرب مني</div>
+        <div class="tab">شمال</div>
+        <div class="tab">وسط</div>
+        <div class="tab">جنوب</div>
+    </div>
+
+    <div class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13536.637025644!2d35.8347!3d32.5514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c110609383617%3A0x66f68744b4e3391d!2z2KXYsdio2K8!5e0!3m2!1sar!2sjo!4v1710000000000" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="section-title">قصة حرفي</div>
+    <div class="scroll-container">
+        <img src="راعي.png" class="card" alt="راعي">
+        <img src="حرفي لبنة.png" class="card" alt="حرفي لبنة">
+        <img src="حرفي زيتون.png" class="card" alt="حرفي زيتون">
+    </div>
+
+    <div class="section-title">المنتجات</div>
+    <div class="scroll-container">
+        <img src="product1.png" class="card" alt="منتج 1">
+        <img src="product2.png" class="card" alt="منتج 2">
+        <img src="product3.png" class="card" alt="منتج 3">
+    </div>
+
+    <div class="section-title">ورشات</div>
+    <div class="scroll-container">
+        <img src="workshop1.png" class="card" alt="ورشة 1">
+        <img src="workshop2.png" class="card" alt="ورشة 2">
+        <img src="workshop3.png" class="card" alt="ورشة 3">
+    </div>
+
+    <div class="section-title">فعاليات</div>
+    <div class="scroll-container">
+        <img src="event1.png" class="card" alt="فعالية 1">
+        <img src="event2.png" class="card" alt="فعالية 2">
+        <img src="event3.png" class="card" alt="فعالية 3">
+    </div>
+
+    <div class="footer-banner">
+        <img src="rural_tourism.png" alt="سياحة ريفية">
+        <div class="footer-text">سياحة ريفية</div>
+    </div>
+
+    <script>
+        // كود بسيط لتبديل المربع الأصفر بين التابات عند الكبس
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
