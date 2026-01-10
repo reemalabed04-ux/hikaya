@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - تثبيت الحجز</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+            --input-bg: #f5e6bc;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: var(--theme-orange);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        /* التصميم المنحني الجانبي العلوي */
+        .top-wave {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 80px;
+            z-index: -1;
+        }
+
+        .title-badge {
+            background-color: var(--theme-orange);
+            color: white;
+            display: inline-block;
+            padding: 8px 35px;
+            border-radius: 15px 0 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* تنسيق الحقول */
+        .form-container {
+            clear: both;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .input-group input {
+            background-color: var(--input-bg);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Tajawal', sans-serif;
+            color: var(--theme-orange);
+            font-size: 16px;
+        }
+
+        /* قسم المجموع */
+        .summary-section {
+            text-align: left;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .summary-section span {
+            color: #bbb;
+            text-decoration: line-through;
+            font-size: 15px;
+            margin-left: 8px;
+        }
+
+        /* أزرار الإجراءات */
+        .actions-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        .confirm-btn {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 10px 45px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .cancel-link {
+            color: var(--theme-orange);
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        /* التصميم السفلي وأيقونة الهوم */
+        .footer-design {
+            position: relative;
+            height: 120px;
+            margin-top: 20px;
+        }
+
+        .footer-wave-line {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            height: 40px;
+            border-top: 2px solid var(--theme-orange);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .home-icon-link {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .home-icon {
+            font-size: 45px;
+            color: var(--theme-orange);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars" style="font-size: 28px;"></i></div>
+        <a href="booking.html"><i class="fas fa-arrow-left" style="font-size: 28px;"></i></a>
+    </header>
+
+    <svg class="top-wave" viewBox="0 0 100 100">
+        <path d="M100,0 Q70,50 100,100" fill="none" stroke="#ea7424" stroke-width="3"/>
+    </svg>
+
+    <div class="title-badge">ادفع هنا</div>
+
+    <div class="form-container">
+        <div class="input-group">
+            <label>طريقة الدفع:</label>
+            <input type="text" placeholder="مثلاً: بطاقة ائتمان / كاش">
+        </div>
+
+        <div class="input-group">
+            <label>تفاصيل العنوان:</label>
+            <input type="text" placeholder="المحافظة، المنطقة، الشارع">
+        </div>
+
+        <div class="input-group">
+            <label>رقم الهاتف:</label>
+            <input type="tel" placeholder="07XXXXXXXX">
+        </div>
+
+        <div class="input-group">
+            <label>البريد الالكتروني:</label>
+            <input type="email" placeholder="example@mail.com">
+        </div>
+    </div>
+
+    <div class="summary-section">
+        المجموع: <span>164 دينار</span> 160 دينار
+    </div>
+
+    <div class="actions-section" style="position: relative;">
+        <svg style="position: absolute; right: -20px; top: -30px; width: 60px; height: 100px;" viewBox="0 0 100 100">
+            <path d="M100,0 Q70,50 100,100" fill="none" stroke="#ea7424" stroke-width="4"/>
+        </svg>
+        <a href="#" class="confirm-btn">تثبيت الحجز</a>
+        <a href="booking.html" class="cancel-link">الغاء العملية</a>
+    </div>
+
+    <div class="footer-design">
+        <div class="footer-wave-line"></div>
+        <a href="south.html" class="home-icon-link">
+            <i class="fas fa-home home-icon"></i>
+        </a>
+    </div>
+
+</body>
+</html> 
