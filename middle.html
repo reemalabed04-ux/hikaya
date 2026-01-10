@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - الوسط</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0; 
+            --middle-red: #cf2629; /* اللون الأحمر المختار */
+            --menu-bg: #f2d354;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        /* القائمة الجانبية */
+        .sidenav {
+            height: 100%; width: 0; position: fixed; z-index: 1000;
+            top: 0; right: 0; background-color: var(--menu-bg);
+            overflow-x: hidden; transition: 0.5s; padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 12px 32px; text-decoration: none; font-size: 18px;
+            color: var(--middle-red); display: block;
+            border-bottom: 1px solid rgba(207, 38, 41, 0.2); font-weight: bold;
+        }
+        .sidenav .closebtn { position: absolute; top: 10px; left: 20px; font-size: 36px; }
+
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 10px 5px; }
+        .menu-icon, .arrow-icon { font-size: 28px; color: var(--middle-red); cursor: pointer; }
+
+        /* Hero Slider */
+        .hero-section {
+            width: 95%; height: 200px; margin: 0 auto;
+            border-radius: 20px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .hero-section img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.8s ease-in-out; }
+
+        /* Tabs */
+        .tabs-container { display: flex; justify-content: space-around; margin: 20px 0; }
+        .tab {
+            padding: 6px 15px; border-radius: 15px; font-size: 14px;
+            color: var(--middle-red); text-decoration: none; border: 1px solid var(--middle-red);
+        }
+        .tab.active { background-color: var(--middle-red); color: white; }
+
+        /* Sections */
+        .section-title { font-weight: 700; color: var(--middle-red); margin: 15px 5px 10px; font-size: 17px; }
+        .scroll-container { display: flex; overflow-x: auto; gap: 12px; padding: 5px; scrollbar-width: none; }
+        .scroll-container::-webkit-scrollbar { display: none; }
+        .card { min-width: 110px; height: 110px; border-radius: 20px; object-fit: cover; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        /* Footer */
+        .footer-banner { margin: 20px 0; text-align: center; }
+        .footer-banner img { width: 100%; border-radius: 20px; }
+        .footer-text { color: var(--middle-red); font-weight: bold; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">عن حكاية</a> <a href="#">اقتراح</a> <a href="#">البحث</a>
+        <a href="#">المفضلات</a> <a href="#">صفحة المستخدم</a> <a href="#">تواصل معنا</a>
+        <a href="#">انضم إلينا</a> <a href="#">تغيير اللغة</a> <a href="#">تسجيل الخروج</a>
+    </div>
+
+    <header>
+        <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
+        <a href="index.html" class="arrow-icon"><i class="fas fa-arrow-left"></i></a>
+    </header>
+
+    <div class="hero-section">
+        <img id="middle-slider" src="ورشة وسط.png" alt="الوسط">
+    </div>
+
+    <div class="tabs-container">
+        <a href="index.html" class="tab">بالقرب مني</a>
+        <a href="north.html" class="tab">شمال</a>
+        <a href="middle.html" class="tab active">وسط</a>
+        <a href="south.html" class="tab">جنوب</a>
+    </div>
+
+    <div class="section-title">قصة حرفي</div>
+    <div class="scroll-container">
+        <img src="حرفي فوسفات.PNG" class="card">
+        <img src="Gemini_Generated_Image_davy6xdavy6xdavy.png" class="card">
+        <img src="راعي.png" class="card">
+    </div>
+
+    <div class="section-title">المنتجات</div>
+    <div class="scroll-container">
+        <img src="منتنج بندورة.png" class="card">
+        <img src="منتج احمر.PNG" class="card">
+        <img src="منتج 3.png" class="card">
+    </div>
+
+    <div class="section-title">ورشات</div>
+    <div class="scroll-container">
+        <img src="ورشة فسيفساء.png" class="card">
+        <img src="ورشة خبز.png" class="card">
+        <img src="ورشة وسط.png" class="card">
+    </div>
+
+    <div class="section-title">فعاليات</div>
+    <div class="scroll-container">
+        <img src="افنتطط.png" class="card">
+        <img src="افنتتت.png" class="card">
+        <img src="Gemini_Generated_Image_41z9vp41z9vp41z9.png" class="card">
+    </div>
+
+    <div class="footer-banner">
+        <img src="سياحة وسط.png">
+        <div class="footer-text">سياحة ريفية</div>
+    </div>
+
+    <script>
+        function openNav() { document.getElementById("mySidenav").style.width = "250px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+
+        const middleImages = ["ورشة وسط.png", "ورشة فسيفساء.png", "masra7.png"];
+        let currentIndex = 0;
+        const sliderImg = document.getElementById('middle-slider');
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % middleImages.length;
+            sliderImg.style.opacity = '0';
+            setTimeout(() => {
+                sliderImg.src = middleImages[currentIndex];
+                sliderImg.style.opacity = '1';
+            }, 800);
+        }, 7000);
+    </script>
+</body>
+</html>
