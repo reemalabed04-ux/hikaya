@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - تثبيت الطلب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+            --input-bg: #f5e6bc;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: var(--theme-orange);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        /* الزخرفة العلوية والسفلية البرتقالية */
+        .orange-pattern {
+            position: absolute;
+            right: 0;
+            width: 120px;
+            z-index: -1;
+        }
+
+        .title-badge {
+            background-color: var(--theme-orange);
+            color: white;
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 15px 0 0 15px;
+            font-weight: bold;
+            float: left; /* لتظهر من جهة اليسار كما في التصميم */
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            clear: both;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .input-group input {
+            background-color: var(--input-bg);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Tajawal', sans-serif;
+            color: var(--theme-orange);
+            font-size: 16px;
+        }
+
+        .total-section {
+            text-align: left;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .total-section span {
+            color: #ccc; /* اللون الفاتح للمبلغ الأصلي قبل الخصم */
+            text-decoration: line-through;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .submit-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        .confirm-btn {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 10px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .cancel-link {
+            color: var(--theme-orange);
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        /* الباترن السفلي وأيقونة البيت */
+        .footer-pattern {
+            position: relative;
+            height: 150px;
+            margin-top: 20px;
+        }
+
+        .wave-line {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            height: 40px;
+            border-top: 3px solid var(--theme-orange);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .home-icon-wrapper {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .home-icon {
+            font-size: 45px;
+            color: var(--theme-orange);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars orange-icon" style="font-size: 28px;"></i></div>
+        <a href="cart.html"><i class="fas fa-arrow-left orange-icon" style="font-size: 28px;"></i></a>
+    </header>
+
+    <svg class="orange-pattern" viewBox="0 0 100 100" style="top: 80px;">
+        <path d="M100,0 Q70,50 100,100" fill="none" stroke="#ea7424" stroke-width="3"/>
+    </svg>
+
+    <div class="title-badge">ادفع هنا</div>
+
+    <form class="form-container">
+        <div class="input-group">
+            <label>طريقة الدفع:</label>
+            <input type="text" placeholder="اختر طريقة الدفع">
+        </div>
+
+        <div class="input-group">
+            <label>تفاصيل العنوان:</label>
+            <input type="text" placeholder="شارع، بناية، رقم الشقة">
+        </div>
+
+        <div class="input-group">
+            <label>رقم الهاتف:</label>
+            <input type="tel" placeholder="07XXXXXXXX">
+        </div>
+
+        <div class="input-group">
+            <label>البريد الالكتروني:</label>
+            <input type="email" placeholder="example@mail.com">
+        </div>
+    </form>
+
+    <div class="total-section">
+        المجموع: <span>164 دينار</span> 160 دينار
+    </div>
+
+    <svg class="orange-pattern" viewBox="0 0 100 100" style="position: relative; width: 80px; float: left; margin-top: -50px;">
+        <path d="M100,0 Q70,50 100,100" fill="none" stroke="#ea7424" stroke-width="3"/>
+    </svg>
+
+    <div class="submit-section">
+        <a href="#" class="confirm-btn">تثبيت الطلب</a>
+        <a href="cart.html" class="cancel-link">الغاء العملية</a>
+    </div>
+
+    <div class="footer-pattern">
+        <div class="wave-line"></div>
+        <div class="home-icon-wrapper">
+            <a href="index.html"><i class="fas fa-home home-icon"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
