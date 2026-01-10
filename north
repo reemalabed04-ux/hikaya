@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - الشمال</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --north-blue: #5b6ba3; /* اللون الأزرق المستخدم في صفحة الشمال */
+            --text-color: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 10px;
+            color: var(--text-color);
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5px;
+        }
+        .menu-icon, .arrow-icon {
+            font-size: 24px;
+            color: var(--north-blue);
+        }
+
+        /* Hero Image */
+        .hero-section img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+        }
+        .tab {
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--north-blue);
+            transition: 0.3s;
+        }
+        .tab.active {
+            background-color: var(--north-blue);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Sections Styling */
+        .section-title {
+            font-weight: 700;
+            color: var(--north-blue);
+            margin: 20px 5px 10px;
+            font-size: 18px;
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+        .scroll-container::-webkit-scrollbar { display: none; }
+
+        .card {
+            min-width: 110px;
+            width: 110px;
+            height: 110px;
+            border-radius: 20px;
+            object-fit: cover;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Footer Banner */
+        .footer-banner {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .footer-banner img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .footer-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--north-blue);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+        <a href="index.html" class="arrow-icon"><i class="fas fa-arrow-left"></i></a>
+    </header>
+
+    <div class="hero-section">
+        <img src="bazar شمال.png" alt="شمال">
+    </div>
+
+    <div class="tabs-container">
+        <a href="index.html" class="tab">بالقرب مني</a>
+        <a href="north.html" class="tab active">شمال</a>
+        <a href="middle.html" class="tab">وسط</a>
+        <a href="south.html" class="tab">جنوب</a>
+    </div>
+
+    <div class="section-title">قصة حرفي</div>
+    <div class="scroll-container">
+        <img src="Gemini_Generated_Image_nm0lzrnm0lzrnm0l.png" class="card" alt="قصة 1">
+        <img src="حرف2ي.png" class="card" alt="قصة 2">
+        <img src="حرفي.png" class="card" alt="قصة 3">
+    </div>
+
+    <div class="section-title">المنتجات</div>
+    <div class="scroll-container">
+        <img src="منتج 2.png" class="card" alt="منتج 2">
+        <img src="منتج 3.png" class="card" alt="منتج 3">
+        <img src="منج 1.png" class="card" alt="منتج 1">
+    </div>
+
+    <div class="section-title">ورشات</div>
+    <div class="scroll-container">
+        <img src="ورشة 3z.png" class="card" alt="ورشة 3">
+        <img src="ورشة 1.png" class="card" alt="ورشة 1">
+        <img src="ورشة 2.png" class="card" alt="ورشة 2">
+    </div>
+
+    <div class="section-title">فعاليات</div>
+    <div class="scroll-container">
+        <img src="بزار شمال.png" class="card" alt="بازار شمال">
+        <img src="بازار عجلون.png" class="card" alt="بازار عجلون">
+        <img src="بازار اربد.png" class="card" alt="بازار اربد">
+    </div>
+
+    <div class="footer-banner">
+        <img src="سياحة.png" alt="سياحة">
+        <div class="footer-text">سياحة ريفية</div>
+    </div>
+
+</body>
+</html>
