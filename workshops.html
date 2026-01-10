@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - الورشات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* الباترن المنحني الجانبي */
+        .side-pattern {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 45px;
+            height: 100%;
+            border-right: 2px solid var(--theme-orange);
+            border-radius: 0 60px 60px 0;
+            z-index: -1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        .page-title-badge {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .badge-text {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 8px 35px;
+            border-radius: 15px 0 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* توزيع الورشات */
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 15px;
+            padding: 10px 20px 30px 60px; /* مسافة للباترن */
+        }
+
+        .workshop-card {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .workshop-card img {
+            width: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .workshop-name {
+            color: var(--theme-orange);
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* أحجام مخصصة للصور */
+        .tall { grid-row: span 2; }
+        .tall img { height: 350px; }
+        .regular img { height: 160px; }
+        .wide { grid-column: span 2; }
+        .wide img { height: 220px; }
+
+        .footer-home {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="side-pattern"></div>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars" style="color: var(--theme-orange); font-size: 26px;"></i></div>
+        <a href="index.html"><i class="fas fa-arrow-left" style="color: var(--theme-orange); font-size: 26px;"></i></a>
+    </header>
+
+    <div class="page-title-badge">
+        <div class="badge-text">ورشات</div>
+    </div>
+
+    <div class="workshops-grid">
+        <div class="workshop-card tall">
+            <img src="warshetfa5ar.png" alt="ورشة الفخار الكبرى">
+            <div class="workshop-name">فن الفخار التقليدي</div>
+        </div>
+
+        <div class="workshop-card regular">
+            <img src="Gemini_Generated_Image_t5j7gvt5j7gvt5j7.png" alt="ورشة الخبز">
+            <div class="workshop-name">أسرار الخبز البلدي</div>
+        </div>
+
+        <div class="workshop-card regular">
+            <img src="ورشة سمك.png" alt="ورشة السمك">
+            <div class="workshop-name">تحضير سمك العقبة</div>
+        </div>
+
+        <div class="workshop-card wide">
+            <img src="Gemini_Generated_Image_jfe7egjfe7egjfe7.png" alt="ورشة رمل">
+            <div class="workshop-name">رحلات ورشات البادية</div>
+        </div>
+
+        <div class="workshop-card wide">
+            <img src="ورشة فخار.png" alt="ورشة تشكيل">
+            <div class="workshop-name">ورشة تشكيل الطين اليدوية</div>
+        </div>
+    </div>
+
+    <div class="footer-home">
+        <a href="index.html"><i class="fas fa-home" style="color: var(--theme-orange); font-size: 35px;"></i></a>
+    </div>
+
+</body>
+</html>
