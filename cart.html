@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - سلة المشتريات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: var(--theme-orange);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .page-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        /* قائمة المنتجات في السلة */
+        .cart-container {
+            padding: 0 20px;
+        }
+
+        .cart-item {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-left: 15px;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+        }
+
+        .item-price {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-color);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        /* ملخص الحساب */
+        .summary-section {
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 2px dashed var(--theme-orange);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .total-row {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* زر الدفع */
+        .checkout-btn {
+            display: block;
+            background-color: var(--theme-orange);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(234, 116, 36, 0.3);
+        }
+
+        .checkout-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* أيقونة البيت */
+        .footer-home {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars" style="font-size: 24px;"></i></div>
+        <a href="products.html"><i class="fas fa-arrow-left" style="font-size: 24px;"></i></a>
+    </header>
+
+    <div class="page-title">سلة المشتريات</div>
+
+    <div class="cart-container">
+        <div class="cart-item">
+            <img src="جميد2d.png" alt="جميد">
+            <div class="item-details">
+                <span class="item-name">جميد كركي أصيل</span>
+                <span class="item-price">12.00 د.أ</span>
+            </div>
+            <div class="quantity-control">
+                <span>1</span>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <img src="labneh.png" alt="لبنة">
+            <div class="item-details">
+                <span class="item-name">لبنة أم سمير</span>
+                <span class="item-price">4.50 د.أ</span>
+            </div>
+            <div class="quantity-control">
+                <span>2</span>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <img src="bamyeh.png" alt="بامية">
+            <div class="item-details">
+                <span class="item-name">بامية مجففة</span>
+                <span class="item-price">6.00 د.أ</span>
+            </div>
+            <div class="quantity-control">
+                <span>1</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-section">
+        <div class="summary-row">
+            <span>المجموع الفرعي:</span>
+            <span>27.00 د.أ</span>
+        </div>
+        <div class="summary-row">
+            <span>التوصيل:</span>
+            <span>3.00 د.أ</span>
+        </div>
+        <div class="summary-row total-row">
+            <span>الإجمالي:</span>
+            <span>30.00 د.أ</span>
+        </div>
+    </div>
+
+    <a href="payment.html" class="checkout-btn">ادفع من هنا</a>
+
+    <div class="footer-home">
+        <a href="index.html"><i class="fas fa-home" style="font-size: 35px; color: var(--theme-orange);"></i></a>
+    </div>
+
+</body>
+</html>
