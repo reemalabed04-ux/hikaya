@@ -1,202 +1,31 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حكاية - الصفحة الرئيسية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<div class="hero-section">
+    <img id="main-slider" src="ورشة لبنة.png" alt="ورشة لبنة">
+</div>
+
+<script>
+    // كود تبديل الصور تلقائياً كل 7 ثواني
+    const images = [
+        "ورشة لبنة.png",
+        "بازار عجلون.png",
+        "بازار الكرك.png",
+        "Gemini_Generated_Image_ascbesascbesascb.png"
+    ];
     
-    <style>
-        :root {
-            --bg-color: #fff1d0;
-            --primary-yellow: #c5ac3b;
-            --text-color: #4a4a4a;
-        }
+    let currentIndex = 0;
+    const sliderElement = document.getElementById('main-slider');
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 10px;
-            color: var(--text-color);
-        }
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        sliderElement.style.opacity = '0'; // تأثير تلاشي بسيط
+        
+        setTimeout(() => {
+            sliderElement.src = images[currentIndex];
+            sliderElement.style.opacity = '1';
+        }, 500);
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    // أضفنا تنسيق بسيط للـ Slider لجعل الانتقال ناعماً
+    sliderElement.style.transition = "opacity 0.5s ease-in-out";
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5px;
-        }
-        .menu-icon, .arrow-icon {
-            font-size: 24px;
-            color: var(--primary-yellow);
-            cursor: pointer;
-        }
-
-        /* Hero Image */
-        .hero-section img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        /* Navigation Tabs */
-        .tabs-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            gap: 5px;
-        }
-        .tab {
-            padding: 8px 15px;
-            border-radius: 12px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-        .tab.active {
-            background-color: var(--primary-yellow);
-            color: white;
-        }
-        .tab:hover {
-            border-color: var(--primary-yellow);
-        }
-
-        /* Map Section */
-        .map-section {
-            width: 100%;
-            height: 200px;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            border: 2px solid white;
-        }
-
-        /* Horizontal Scrolling Sections */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 15px 5px 10px;
-        }
-        .section-title {
-            font-weight: 700;
-            color: var(--primary-yellow);
-            font-size: 18px;
-        }
-        .scroll-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding-bottom: 10px;
-            scrollbar-width: none;
-        }
-        .scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-        .card {
-            min-width: 130px;
-            width: 130px;
-            height: 130px;
-            background-color: #ddd;
-            border-radius: 15px;
-            object-fit: cover;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Footer Banner */
-        .footer-banner {
-            margin-top: 30px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .footer-banner img {
-            width: 100%;
-            border-radius: 20px;
-        }
-        .footer-text {
-            margin-top: 10px;
-            font-weight: bold;
-            color: var(--primary-yellow);
-            font-size: 18px;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="menu-icon"><i class="fas fa-bars"></i></div>
-        <div class="arrow-icon"><i class="fas fa-arrow-left"></i></div>
-    </header>
-
-    <div class="hero-section">
-        <img src="ورشة لبنة.png" alt="ورشة لبنة">
-    </div>
-
-    <div class="tabs-container">
-        <a href="nearby.html" class="tab active">بالقرب مني</a>
-        <a href="north.html" class="tab">شمال</a>
-        <a href="middle.html" class="tab">وسط</a>
-        <a href="south.html" class="tab">جنوب</a>
-    </div>
-
-    <div class="map-section">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433240.2334812368!2d35.6133886196238!3d31.83603460616142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5e396696d003%3A0x6a05374467d30560!2sJordan!5e0!3m2!1sen!2sjo!4v1700000000000" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-    </div>
-
-    <div class="section-header">
-        <a href="stories.html" class="section-title">قصة حرفي</a>
-    </div>
-    <div class="scroll-container">
-        <a href="stories.html"><img src="راعي.png" class="card" alt="راعي"></a>
-        <a href="stories.html"><img src="حرفي لبنة.png" class="card" alt="حرفي لبنة"></a>
-        <a href="stories.html"><img src="حرفي زيتون.png" class="card" alt="حرفي زيتون"></a>
-    </div>
-
-    <div class="section-header">
-        <a href="products.html" class="section-title">المنتجات</a>
-    </div>
-    <div class="scroll-container">
-        <a href="products.html"><img src="labneh.png" class="card" alt="لبنة"></a>
-        <a href="products.html"><img src="bamyeh.png" class="card" alt="بامية"></a>
-        <a href="products.html"><img src="Zyton.png" class="card" alt="زيتون"></a>
-    </div>
-
-    <div class="section-header">
-        <a href="workshops.html" class="section-title">ورشات</a>
-    </div>
-    <div class="scroll-container">
-        <a href="workshops.html"><img src="حرف2ي.png" class="card" alt="حرفي 2"></a>
-        <a href="workshops.html"><img src="warshetfa5ar.png" class="card" alt="ورشة فخار"></a>
-        <a href="workshops.html"><img src="tatrez.png" class="card" alt="تطريز"></a>
-    </div>
-
-    <div class="section-header">
-        <a href="events.html" class="section-title">فعاليات</a>
-    </div>
-    <div class="scroll-container">
-        <a href="events.html"><img src="bazar2.png" class="card" alt="بازار 2"></a>
-        <a href="events.html"><img src="masra7.png" class="card" alt="مسرح"></a>
-        <a href="events.html"><img src="bazar1.png" class="card" alt="بازار 1"></a>
-    </div>
-
-    <div class="footer-banner">
-        <a href="rural_tourism.html">
-            <img src="سياحة ريفية.png" alt="سياحة ريفية">
-            <div class="footer-text">سياحة ريفية</div>
-        </a>
-    </div>
-
-</body>
-</html>
+    setInterval(changeImage, 7000); // 7000 ميلي ثانية = 7 ثواني
+</script>
