@@ -10,7 +10,7 @@
     <style>
         :root {
             --bg-color: #fff1d0;
-            --primary-yellow: #c5ac3b; /* اللون القديم المطلوب */
+            --primary-yellow: #c5ac3b; /* اللون الكموني المطلوب */
             --menu-bg: #f2d354; 
             --orange-text: #ea7424;
         }
@@ -73,7 +73,7 @@
             cursor: pointer;
         }
 
-        /* السلايدر */
+        /* السلايدر - صورة واحدة فقط */
         .hero-section {
             width: 100%;
             height: 220px;
@@ -90,7 +90,7 @@
             transition: opacity 0.6s ease-in-out;
         }
 
-        /* التابات باللون القديم */
+        /* التابات باللون الكموني */
         .tabs-container {
             display: flex;
             justify-content: space-around;
@@ -111,15 +111,23 @@
             color: white;
         }
 
+        /* العناوين */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 5px 10px;
+            text-decoration: none;
+        }
+
         .section-title {
             font-weight: 700;
             color: var(--primary-yellow);
-            margin: 15px 5px 10px;
-            display: block;
-            text-decoration: none;
             font-size: 18px;
+            text-decoration: none;
         }
 
+        /* حاويات التمرير */
         .scroll-container {
             display: flex;
             overflow-x: auto;
@@ -134,6 +142,7 @@
             height: 130px;
             border-radius: 15px;
             object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .map-section {
@@ -173,7 +182,7 @@
     </header>
 
     <div class="hero-section">
-        <img id="main-slider" src="بازار عجلون.png" alt="سلايدر">
+        <img id="main-slider" src="بازار عجلون.png" alt="سلايدر حكاية">
     </div>
 
     <div class="tabs-container">
@@ -184,21 +193,43 @@
     </div>
 
     <div class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.625!2d35.910!3d31.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU3JzAwLjAiTiAzNcKwNTQnNDAuMCJF!5e0!3m2!1sar!2sjo!4v1625000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.625121!2d35.9106!3d31.9566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU3JzIzLjgiTiAzNcKwNTQnMzguMiJF!5e0!3m2!1sen!2sjo!4v1620000000000!5m2!1sen!2sjo" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <a href="stories.html" class="section-title">قصة حرفي</a>
+    <div class="section-header">
+        <a href="stories.html" class="section-title">قصة حرفي</a>
+    </div>
     <div class="scroll-container">
-        <img src="راعي.png" class="card">
-        <img src="حرفي لبنة.png" class="card">
-        <img src="حرفي زيتون.png" class="card">
+        <a href="stories.html"><img src="راعي.png" class="card"></a>
+        <a href="stories.html"><img src="حرفي لبنة.png" class="card"></a>
+        <a href="stories.html"><img src="حرفي زيتون.png" class="card"></a>
     </div>
 
-    <a href="products.html" class="section-title">المنتجات</a>
+    <div class="section-header">
+        <a href="products.html" class="section-title">المنتجات</a>
+    </div>
     <div class="scroll-container">
-        <img src="labneh.png" class="card">
-        <img src="bamyeh.png" class="card">
-        <img src="Zyton.png" class="card">
+        <a href="products.html"><img src="labneh.png" class="card"></a>
+        <a href="products.html"><img src="bamyeh.png" class="card"></a>
+        <a href="products.html"><img src="Zyton.png" class="card"></a>
+    </div>
+
+    <div class="section-header">
+        <a href="workshops.html" class="section-title">ورشات</a>
+    </div>
+    <div class="scroll-container">
+        <a href="workshops.html"><img src="warshetfa5ar.png" class="card"></a>
+        <a href="workshops.html"><img src="tatrez.png" class="card"></a>
+        <a href="workshops.html"><img src="حرف2ي.png" class="card"></a>
+    </div>
+
+    <div class="section-header">
+        <a href="events.html" class="section-title">فعاليات</a>
+    </div>
+    <div class="scroll-container">
+        <a href="events.html"><img src="masra7.png" class="card"></a>
+        <a href="events.html"><img src="bazar1.png" class="card"></a>
+        <a href="events.html"><img src="bazar2.png" class="card"></a>
     </div>
 
     <div class="footer-banner">
@@ -208,20 +239,22 @@
     </div>
 
     <script>
+        // وظائف المنيو الجانبية
         function openNav() { document.getElementById("mainSidenav").style.width = "260px"; }
         function closeNav() { document.getElementById("mainSidenav").style.width = "0"; }
 
+        // كود تبديل صور السلايدر (7 ثواني)
         const heroImages = ["بازار عجلون.png", "افنتطط.png", "ورشة فسيفساء.png"];
         let imgIndex = 0;
         const sliderImg = document.getElementById('main-slider');
 
         function rotateImages() {
             imgIndex = (imgIndex + 1) % heroImages.length;
-            sliderImg.style.opacity = '0.5';
+            sliderImg.style.opacity = '0.4';
             setTimeout(() => {
                 sliderImg.src = heroImages[imgIndex];
                 sliderImg.style.opacity = '1';
-            }, 300);
+            }, 400);
         }
 
         setInterval(rotateImages, 7000);
