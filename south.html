@@ -9,10 +9,9 @@
     
     <style>
         :root {
-            --bg-color: #fff1d0;
-            --south-color: #c5ac3b;
-            --menu-bg: #f2d354; /* لون خلفية المنيو القريب من الصورة */
-            --menu-text: #e67e22; /* لون النص البرتقالي */
+            --bg-color: #fff1d0; /* الخلفية البيج */
+            --theme-orange: #ea7424; /* اللون البرتقالي الثيم */
+            --menu-bg: #f2d354; /* لون خلفية القائمة الأصفر */
         }
 
         body {
@@ -35,56 +34,114 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
-            box-shadow: -2px 0 5px rgba(0,0,0,0.2);
         }
 
         .sidenav a {
-            padding: 15px 32px;
+            padding: 12px 32px;
             text-decoration: none;
-            font-size: 20px;
-            color: var(--menu-text);
+            font-size: 18px;
+            color: var(--theme-orange);
             display: block;
-            border-bottom: 1px solid var(--menu-text);
-            transition: 0.3s;
+            border-bottom: 1px solid rgba(234, 116, 36, 0.2);
             font-weight: bold;
-        }
-
-        .sidenav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .sidenav .closebtn {
             position: absolute;
-            top: 0;
-            left: 25px;
+            top: 10px;
+            left: 20px;
             font-size: 36px;
-            margin-left: 50px;
-            border-bottom: none;
+            border: none;
         }
 
-        /* تنسيق باقي الصفحة ليتناسب مع المنيو */
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5px;
+            padding: 10px 5px;
         }
         
-        .menu-icon {
+        .menu-icon, .arrow-icon {
             font-size: 28px;
-            color: var(--south-color);
+            color: var(--theme-orange);
             cursor: pointer;
         }
 
-        /* التنسيقات القديمة (Slider, Tabs, Cards) تبقى كما هي */
-        .hero-section { width: 100%; height: 220px; border-radius: 20px; overflow: hidden; }
-        .hero-section img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .tabs-container { display: flex; justify-content: space-around; margin: 25px 0; }
-        .tab { padding: 8px 18px; border-radius: 12px; color: var(--south-color); text-decoration: none; }
-        .tab.active { background-color: var(--south-color); color: white; }
-        .section-title { font-weight: 700; color: var(--south-color); margin: 20px 5px 10px; }
-        .scroll-container { display: flex; overflow-x: auto; gap: 12px; scrollbar-width: none; }
-        .card { min-width: 110px; height: 110px; border-radius: 20px; object-fit: cover; }
+        /* Hero Slider */
+        .hero-section {
+            width: 95%;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .hero-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        /* Tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .tab {
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: var(--theme-orange);
+            text-decoration: none;
+            border: 1px solid var(--theme-orange);
+        }
+        .tab.active {
+            background-color: var(--theme-orange);
+            color: white;
+        }
+
+        /* Sections */
+        .section-title {
+            font-weight: 700;
+            color: var(--theme-orange);
+            margin: 15px 5px 10px;
+            font-size: 17px;
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 5px;
+            scrollbar-width: none;
+        }
+        .scroll-container::-webkit-scrollbar { display: none; }
+
+        .card {
+            min-width: 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Banner */
+        .footer-banner {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .footer-banner img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .footer-text {
+            color: var(--theme-orange);
+            font-weight: bold;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -104,7 +161,7 @@
 
     <header>
         <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
-        <a href="index.html" style="color: var(--south-color); font-size: 24px;"><i class="fas fa-arrow-left"></i></a>
+        <a href="index.html" class="arrow-icon"><i class="fas fa-arrow-left"></i></a>
     </header>
 
     <div class="hero-section">
@@ -120,33 +177,53 @@
 
     <div class="section-title">قصة حرفي</div>
     <div class="scroll-container">
-        <img src="جمال.png" class="card">
-        <img src="Samak.png" class="card">
-        <img src="Jameed.png" class="card">
+        <img src="جمال.png" class="card" alt="جمال">
+        <img src="Samak.png" class="card" alt="سمك">
+        <img src="Jameed.png" class="card" alt="جميد">
+    </div>
+
+    <div class="section-title">المنتجات</div>
+    <div class="scroll-container">
+        <img src="حليب.png" class="card" alt="حليب">
+        <img src="سمك.png" class="card" alt="سمك">
+        <img src="جميد2d.png" class="card" alt="جميد">
+    </div>
+
+    <div class="section-title">ورشات</div>
+    <div class="scroll-container">
+        <img src="ورشة فخار.png" class="card" alt="فخار">
+        <img src="ورشة جميد.png" class="card" alt="جميد">
+        <img src="ورشة سمك.png" class="card" alt="سمك">
+    </div>
+
+    <div class="section-title">فعاليات</div>
+    <div class="scroll-container">
+        <img src="بازار وادي رم.png" class="card" alt="وادي رم">
+        <img src="بازار بترا 2.png" class="card" alt="بترا">
+        <img src="بازار الكرك.png" class="card" alt="الكرك">
+    </div>
+
+    <div class="footer-banner">
+        <img src="سياحة جنوب.png" alt="سياحة">
+        <div class="footer-text">سياحة ريفية</div>
     </div>
 
     <script>
-        // وظائف القائمة الجانبية
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
+        function openNav() { document.getElementById("mySidenav").style.width = "250px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-
-        // كود السلايدر التلقائي
+        // كود السلايدر التلقائي (7 ثواني)
         const southImages = ["فوق بالجنوب.png", "فوق جنوب.png", "سياحة جنوب.png"];
-        let southIndex = 0;
-        const southSlider = document.getElementById('south-slider');
+        let currentIndex = 0;
+        const sliderImg = document.getElementById('south-slider');
 
         setInterval(() => {
-            southIndex = (southIndex + 1) % southImages.length;
-            southSlider.style.opacity = '0';
+            currentIndex = (currentIndex + 1) % southImages.length;
+            sliderImg.style.opacity = '0';
             setTimeout(() => {
-                southSlider.src = southImages[southIndex];
-                southSlider.style.opacity = '1';
-            }, 500);
+                sliderImg.src = southImages[currentIndex];
+                sliderImg.style.opacity = '1';
+            }, 800);
         }, 7000);
     </script>
 </body>
