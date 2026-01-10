@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - تفاصيل الرحلة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: var(--theme-orange);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        /* Hero Image Container */
+        .trip-hero {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .trip-hero img {
+            width: 100%;
+            display: block;
+        }
+
+        .star-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 35px;
+            color: var(--theme-orange);
+            opacity: 0.8;
+        }
+
+        /* Content Area */
+        .content-container {
+            padding: 25px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .description-text {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Cost Section */
+        .cost-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .old-price {
+            color: #bbb;
+            text-decoration: line-through;
+            font-size: 16px;
+        }
+
+        /* Booking Action */
+        .booking-area {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        /* البرتقالي المنحني خلف زر الحجز */
+        .orange-shape {
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+            width: 150px;
+            z-index: 1;
+        }
+
+        .book-btn {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 10px 40px;
+            border-radius: 12px 0 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(234, 116, 36, 0.2);
+        }
+
+        /* Bottom Wave & Home */
+        .footer-pattern {
+            position: relative;
+            height: 120px;
+            margin-top: 20px;
+        }
+
+        .wave-line {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            height: 50px;
+            border-top: 2px solid var(--theme-orange);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .home-icon-wrapper {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .home-icon {
+            font-size: 45px;
+            color: var(--theme-orange);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars" style="font-size: 28px;"></i></div>
+        <a href="rural_tourism.html"><i class="fas fa-arrow-left" style="font-size: 28px;"></i></a>
+    </header>
+
+    <div class="trip-hero">
+        <img src="Gemini_Generated_Image_t5j7gvt5j7gvt5j7.png" alt="رحلة ريف الكرك">
+        <i class="far fa-star star-overlay"></i>
+    </div>
+
+    <div class="content-container">
+        <div class="description-text">
+            تقدّم هذه الرحلة تجربة سياحة ريفية متكاملة في ريف الكرك، تتيح للزوار التعرّف على الحياة المحلية عن قرب وزيارة عائلات تعمل في إنتاج المونة والمنتجات الريفية التقليدية.
+            <br><br>
+            تشمل الرحلة التنقّل من وإلى الموقع، الإقامة في بيوت ريفية، وجلسات تفاعلية يتعرّف خلالها المشاركون على أصل الحكايات المرتبطة بالمنتجات الريفية، وعلى الأشخاص الذين يصنعونها وأساليب عيشهم المرتبطة بالأرض.
+        </div>
+
+        <div class="cost-section">
+            التكلفة: <span class="old-price">250 دينار</span> 200 دينار
+        </div>
+    </div>
+
+    <div class="booking-area">
+        <svg class="orange-shape" viewBox="0 0 100 100">
+            <path d="M100,0 Q70,50 100,100" fill="none" stroke="#ea7424" stroke-width="4"/>
+        </svg>
+        <a href="booking.html" class="book-btn">احجز الآن</a>
+    </div>
+
+    <div class="footer-pattern">
+        <div class="wave-line"></div>
+        <div class="home-icon-wrapper">
+            <a href="index.html">
+                <i class="fas fa-home home-icon"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
