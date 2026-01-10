@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - السياحة الريفية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* الباترن المنحني الجانبي البرتقالي */
+        .side-pattern {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 45px;
+            height: 100%;
+            border-right: 2px solid var(--theme-orange);
+            border-radius: 0 60px 60px 0;
+            z-index: -1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        .page-title-badge {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .badge-text {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 8px 35px;
+            border-radius: 15px 0 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* توزيع الرحلات بنظام شبكي متفاوت */
+        .tourism-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 10px 20px 30px 60px; /* مسافة للباترن الجانبي */
+        }
+
+        .tour-card {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .tour-card img {
+            width: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .tour-name {
+            color: var(--theme-orange);
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* أحجام الصور لمحاكاة الديزاين */
+        .wide { grid-column: span 2; }
+        .wide img { height: 200px; }
+        .tall { grid-row: span 2; }
+        .tall img { height: 320px; }
+        .regular img { height: 160px; }
+
+        .footer-home {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="side-pattern"></div>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars" style="color: var(--theme-orange); font-size: 26px;"></i></div>
+        <a href="index.html"><i class="fas fa-arrow-left" style="color: var(--theme-orange); font-size: 26px;"></i></a>
+    </header>
+
+    <div class="page-title-badge">
+        <div class="badge-text">سياحة ريفية</div>
+    </div>
+
+    <div class="tourism-grid">
+        <a href="trip_details.html" class="tour-card wide">
+            <img src="Gemini_Generated_Image_t5j7gvt5j7gvt5j7.png" alt="رحلة إعداد الخبز">
+            <div class="tour-name">تجربة إعداد الخبز في الريف</div>
+        </a>
+
+        <div class="tour-card tall">
+            <img src="IMG_6640.PNG" alt="رحلة صيد">
+            <div class="tour-name">يوم مع صيادي العقبة</div>
+        </div>
+
+        <div class="tour-card regular">
+            <img src="سياحة جنوب.png" alt="مخيمات">
+            <div class="tour-name">تخييم في وادي رم</div>
+        </div>
+
+        <div class="tour-card regular">
+            <img src="IMG_6638.PNG" alt="البترا">
+            <div class="tour-name">استكشاف عجائب البترا</div>
+        </div>
+
+        <div class="tour-card wide">
+            <img src="سياحة بحر.png" alt="رحلة بحرية">
+            <div class="tour-name">جولة بحرية في خليج العقبة</div>
+        </div>
+    </div>
+
+    <div class="footer-home">
+        <a href="index.html"><i class="fas fa-home" style="color: var(--theme-orange); font-size: 35px;"></i></a>
+    </div>
+
+</body>
+</html>
