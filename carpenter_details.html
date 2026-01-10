@@ -95,13 +95,13 @@
             margin-bottom: 30px;
         }
 
-        .video-wrapper {
-            width: 100%;
-            height: 200px;
-            background-color: #00FF00; /* الشاشة الخضراء */
-            border-radius: 25px;
-            overflow: hidden;
-        }
+    .video-wrapper {
+        width: 100%;
+        height: 200px;
+        background-color: var(--bg-color); /* تم تغيير اللون من الأخضر إلى لون الخلفية البيج */
+        border-radius: 25px;
+        overflow: hidden;
+    }
 
         video {
             width: 100%;
@@ -159,6 +159,13 @@
         }
 
     </style>
+
+    <script>
+    window.onload = function() {
+        var v = document.getElementById('myVideo');
+        v.play();
+    };
+</script>
 </head>
 <body>
 
@@ -184,14 +191,14 @@
     </div>
 
     <div class="video-container">
-        <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-                <source src="FinalRender.mp4" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو.
-            </video>
-        </div>
+    <div class="video-wrapper">
+        <video id="myVideo" autoplay muted loop playsinline preload="auto">
+            <source src="FinalRender.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
     </div>
-
+</div>
+   
     <div class="contact-rating">
         <div>
             <span class="label" style="color: var(--theme-orange); text-align: center;">تقييمي</span>
