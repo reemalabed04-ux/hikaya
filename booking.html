@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - الحجز</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+            --input-bg: #f5e6bc;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: var(--theme-orange);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        .title-badge {
+            background-color: var(--theme-orange);
+            color: white;
+            display: inline-block;
+            padding: 8px 35px;
+            border-radius: 15px 0 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .booking-container {
+            clear: both;
+            padding: 20px;
+        }
+
+        /* المربعات العلوية (الأرقام العشوائية) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            background-color: var(--input-bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* التقويم */
+        .calendar-section {
+            background-color: var(--input-bg);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .calendar-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        .day-name { font-weight: bold; padding-bottom: 5px; }
+        .day { padding: 8px; border-radius: 5px; }
+        .day.selected { background-color: var(--theme-orange); color: white; }
+
+        /* الأنشطة */
+        .activities-section {
+            margin-bottom: 30px;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--input-bg);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .activity-item input {
+            accent-color: var(--theme-orange);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* زر الدفع */
+        .pay-now-area {
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px;
+            position: relative;
+        }
+
+        .pay-btn {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 12px 45px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(234, 116, 36, 0.2);
+        }
+
+        /* الباترن السفلي */
+        .footer-pattern {
+            position: relative;
+            height: 100px;
+        }
+
+        .wave-line {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            height: 40px;
+            border-top: 2px solid var(--theme-orange);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .home-icon {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: var(--theme-orange);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon"><i class="fas fa-bars" style="font-size: 26px;"></i></div>
+        <a href="trip_details.html"><i class="fas fa-arrow-left" style="font-size: 26px;"></i></a>
+    </header>
+
+    <div class="title-badge">احجز هنا</div>
+
+    <div class="booking-container">
+        <div class="stats-grid">
+            <div class="stat-box">عدد الأشخاص: 4</div>
+            <div class="stat-box">المدة: 3 أيام</div>
+        </div>
+
+        <div class="calendar-section">
+            <span class="calendar-header">يناير 2026</span>
+            <div class="calendar-grid">
+                <div class="day-name">ح</div><div class="day-name">ن</div><div class="day-name">ث</div>
+                <div class="day-name">ر</div><div class="day-name">خ</div><div class="day-name">ج</div><div class="day-name">س</div>
+                <div class="day">1</div><div class="day">2</div><div class="day">3</div>
+                <div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div>
+                <div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day selected">11</div>
+                <div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div>
+            </div>
+        </div>
+
+        <div class="activities-section">
+            <p style="font-weight: bold;">اختر الأنشطة الإضافية:</p>
+            <div class="activity-item">
+                <input type="checkbox" checked> <span>جولة في قلعة الكرك التاريخية</span>
+            </div>
+            <div class="activity-item">
+                <input type="checkbox"> <span>تجربة المنسف الكركي الأصيل</span>
+            </div>
+            <div class="activity-item">
+                <input type="checkbox"> <span>زيارة ورشة الفخار اليدوية</span>
+            </div>
+            <div class="activity-item">
+                <input type="checkbox"> <span>رحلة سفاري في وادي رم</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="pay-now-area">
+        <a href="payment.html" class="pay-btn">ادفع الآن</a>
+    </div>
+
+    <div class="footer-pattern">
+        <div class="wave-line"></div>
+        <a href="index.html"><i class="fas fa-home home-icon"></i></a>
+    </div>
+
+</body>
+</html>
