@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - الجنوب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --south-color: #c5ac3b;
+            --menu-bg: #f2d354; /* لون خلفية المنيو القريب من الصورة */
+            --menu-text: #e67e22; /* لون النص البرتقالي */
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        /* القائمة الجانبية (Sidenav) */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            background-color: var(--menu-bg);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        }
+
+        .sidenav a {
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--menu-text);
+            display: block;
+            border-bottom: 1px solid var(--menu-text);
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .sidenav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            border-bottom: none;
+        }
+
+        /* تنسيق باقي الصفحة ليتناسب مع المنيو */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5px;
+        }
+        
+        .menu-icon {
+            font-size: 28px;
+            color: var(--south-color);
+            cursor: pointer;
+        }
+
+        /* التنسيقات القديمة (Slider, Tabs, Cards) تبقى كما هي */
+        .hero-section { width: 100%; height: 220px; border-radius: 20px; overflow: hidden; }
+        .hero-section img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .tabs-container { display: flex; justify-content: space-around; margin: 25px 0; }
+        .tab { padding: 8px 18px; border-radius: 12px; color: var(--south-color); text-decoration: none; }
+        .tab.active { background-color: var(--south-color); color: white; }
+        .section-title { font-weight: 700; color: var(--south-color); margin: 20px 5px 10px; }
+        .scroll-container { display: flex; overflow-x: auto; gap: 12px; scrollbar-width: none; }
+        .card { min-width: 110px; height: 110px; border-radius: 20px; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">عن حكاية</a>
+        <a href="#">اقتراح</a>
+        <a href="#">البحث</a>
+        <a href="#">المفضلات</a>
+        <a href="#">صفحة المستخدم</a>
+        <a href="#">تواصل معنا</a>
+        <a href="#">انضم إلينا</a>
+        <a href="#">تغيير اللغة</a>
+        <a href="#">تسجيل الخروج</a>
+    </div>
+
+    <header>
+        <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
+        <a href="index.html" style="color: var(--south-color); font-size: 24px;"><i class="fas fa-arrow-left"></i></a>
+    </header>
+
+    <div class="hero-section">
+        <img id="south-slider" src="فوق بالجنوب.png" alt="جنوب">
+    </div>
+
+    <div class="tabs-container">
+        <a href="index.html" class="tab">بالقرب مني</a>
+        <a href="north.html" class="tab">شمال</a>
+        <a href="middle.html" class="tab">وسط</a>
+        <a href="south.html" class="tab active">جنوب</a>
+    </div>
+
+    <div class="section-title">قصة حرفي</div>
+    <div class="scroll-container">
+        <img src="جمال.png" class="card">
+        <img src="Samak.png" class="card">
+        <img src="Jameed.png" class="card">
+    </div>
+
+    <script>
+        // وظائف القائمة الجانبية
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // كود السلايدر التلقائي
+        const southImages = ["فوق بالجنوب.png", "فوق جنوب.png", "سياحة جنوب.png"];
+        let southIndex = 0;
+        const southSlider = document.getElementById('south-slider');
+
+        setInterval(() => {
+            southIndex = (southIndex + 1) % southImages.length;
+            southSlider.style.opacity = '0';
+            setTimeout(() => {
+                southSlider.src = southImages[southIndex];
+                southSlider.style.opacity = '1';
+            }, 500);
+        }, 7000);
+    </script>
+</body>
+</html>
