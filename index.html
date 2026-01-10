@@ -10,8 +10,9 @@
     <style>
         :root {
             --bg-color: #fff1d0;
-            --theme-orange: #ea7424;
-            --menu-bg: #f2d354; /* لون المنيو من الديزاين */
+            --primary-yellow: #c5ac3b; /* اللون القديم المطلوب */
+            --menu-bg: #f2d354; 
+            --orange-text: #ea7424;
         }
 
         body {
@@ -42,7 +43,7 @@
             padding: 15px 32px;
             text-decoration: none;
             font-size: 20px;
-            color: var(--theme-orange);
+            color: var(--orange-text);
             display: block;
             border-bottom: 1px solid rgba(234, 116, 36, 0.2);
             font-weight: bold;
@@ -55,7 +56,7 @@
             font-size: 36px;
             border: none;
             background: none;
-            color: var(--theme-orange);
+            color: var(--orange-text);
             cursor: pointer;
         }
 
@@ -66,13 +67,13 @@
             padding: 15px 5px;
         }
 
-        .menu-icon {
+        .menu-icon, .arrow-icon {
             font-size: 28px;
-            color: var(--theme-orange);
+            color: var(--primary-yellow);
             cursor: pointer;
         }
 
-        /* السلايدر (Hero Section) */
+        /* السلايدر */
         .hero-section {
             width: 100%;
             height: 220px;
@@ -89,7 +90,7 @@
             transition: opacity 0.6s ease-in-out;
         }
 
-        /* التابات (Tabs) */
+        /* التابات باللون القديم */
         .tabs-container {
             display: flex;
             justify-content: space-around;
@@ -101,31 +102,22 @@
             border-radius: 12px;
             font-size: 14px;
             text-decoration: none;
-            color: var(--theme-orange);
-            border: 1px solid var(--theme-orange);
+            color: var(--primary-yellow);
+            border: 1px solid var(--primary-yellow);
         }
 
         .tab.active {
-            background-color: var(--theme-orange);
+            background-color: var(--primary-yellow);
             color: white;
-        }
-
-        /* الخريطة */
-        .map-section {
-            width: 100%;
-            height: 180px;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            border: 2px solid white;
         }
 
         .section-title {
             font-weight: 700;
-            color: var(--theme-orange);
+            color: var(--primary-yellow);
             margin: 15px 5px 10px;
             display: block;
             text-decoration: none;
+            font-size: 18px;
         }
 
         .scroll-container {
@@ -135,7 +127,6 @@
             padding-bottom: 10px;
             scrollbar-width: none;
         }
-
         .scroll-container::-webkit-scrollbar { display: none; }
 
         .card {
@@ -143,6 +134,15 @@
             height: 130px;
             border-radius: 15px;
             object-fit: cover;
+        }
+
+        .map-section {
+            width: 100%;
+            height: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 2px solid white;
         }
 
         .footer-banner img {
@@ -169,11 +169,11 @@
 
     <header>
         <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
-        <div style="font-size: 24px; color: var(--theme-orange);"><i class="fas fa-arrow-left"></i></div>
+        <div class="arrow-icon"><i class="fas fa-arrow-left"></i></div>
     </header>
 
     <div class="hero-section">
-        <img id="main-slider" src="بازار عجلون.png" alt="سلايدر حكاية">
+        <img id="main-slider" src="بازار عجلون.png" alt="سلايدر">
     </div>
 
     <div class="tabs-container">
@@ -184,7 +184,7 @@
     </div>
 
     <div class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.6657!2d35.9106!3d31.9539" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.625!2d35.910!3d31.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU3JzAwLjAiTiAzNcKwNTQnNDAuMCJF!5e0!3m2!1sar!2sjo!4v1625000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <a href="stories.html" class="section-title">قصة حرفي</a>
@@ -203,35 +203,28 @@
 
     <div class="footer-banner">
         <a href="rural_tourism.html">
-            <img src="سياحة ريفية.png" alt="سياحة ريفية">
+            <img src="سياحة ريفية.png" alt="سياحة">
         </a>
     </div>
 
     <script>
-        // وظائف التحكم في القائمة الجانبية
-        function openNav() {
-            document.getElementById("mainSidenav").style.width = "260px";
-        }
+        function openNav() { document.getElementById("mainSidenav").style.width = "260px"; }
+        function closeNav() { document.getElementById("mainSidenav").style.width = "0"; }
 
-        function closeNav() {
-            document.getElementById("mainSidenav").style.width = "0";
-        }
-
-        // كود تبديل صور السلايدر تلقائياً
         const heroImages = ["بازار عجلون.png", "افنتطط.png", "ورشة فسيفساء.png"];
         let imgIndex = 0;
         const sliderImg = document.getElementById('main-slider');
 
         function rotateImages() {
             imgIndex = (imgIndex + 1) % heroImages.length;
-            sliderImg.style.opacity = '0.3'; // تأثير انتقال
+            sliderImg.style.opacity = '0.5';
             setTimeout(() => {
                 sliderImg.src = heroImages[imgIndex];
                 sliderImg.style.opacity = '1';
-            }, 400);
+            }, 300);
         }
 
-        setInterval(rotateImages, 7000); // كل 7 ثواني
+        setInterval(rotateImages, 7000);
     </script>
 </body>
 </html>
