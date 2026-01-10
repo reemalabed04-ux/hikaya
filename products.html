@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية - المنتجات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --theme-orange: #ea7424;
+            --menu-bg: #f2d354;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* المنيو الجانبية */
+        .sidenav {
+            height: 100%; width: 0; position: fixed; z-index: 1000;
+            top: 0; right: 0; background-color: var(--menu-bg);
+            overflow-x: hidden; transition: 0.5s; padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 12px 32px; text-decoration: none; font-size: 18px;
+            color: var(--theme-orange); display: block;
+            border-bottom: 1px solid rgba(234, 116, 36, 0.2); font-weight: bold;
+        }
+        .sidenav .closebtn { position: absolute; top: 10px; left: 20px; font-size: 36px; border: none; background: none; color: var(--theme-orange); cursor: pointer; }
+
+        /* Header */
+        header { display: flex; justify-content: space-between; padding: 15px 20px; align-items: center; }
+        .menu-icon, .arrow-icon { font-size: 26px; color: var(--theme-orange); cursor: pointer; }
+
+        .page-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .header-label {
+            background-color: var(--theme-orange);
+            color: white;
+            padding: 8px 30px;
+            border-radius: 15px 0 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* شبكة المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0 20px 40px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            margin-top: 10px;
+            color: var(--theme-orange);
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* أيقونة الهوم في الأسفل */
+        .footer-nav {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(234, 116, 36, 0.2);
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <button class="closebtn" onclick="closeNav()">&times;</button>
+        <a href="index.html">الرئيسية</a>
+        <a href="#">عن حكاية</a>
+        <a href="#">اقتراح</a>
+        <a href="#">البحث</a>
+        <a href="#">المفضلات</a>
+        <a href="#">تواصل معنا</a>
+    </div>
+
+    <header>
+        <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
+        <a href="south.html" class="arrow-icon"><i class="fas fa-arrow-left"></i></a>
+    </header>
+
+    <div class="page-header">
+        <div class="header-label">المنتجات</div>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card">
+            <img src="labneh.png" alt="لبنة">
+            <span class="product-name">لبنة أم سمير</span>
+        </div>
+
+        <div class="product-card">
+            <img src="IMG_6628.PNG" alt="زيتون">
+            <span class="product-name">زيتون بلدي معتق</span>
+        </div>
+
+        <div class="product-card">
+            <img src="سمك.png" alt="سمك">
+            <span class="product-name">سمك العقبة الطازج</span>
+        </div>
+
+        <a href="jameed_details.html" class="product-card">
+            <img src="جميد2d.png" alt="جميد">
+            <span class="product-name">جميد كركي أصيل</span>
+        </a>
+
+        <div class="product-card">
+            <img src="bamyeh.png" alt="بامية">
+            <span class="product-name">بامية مجففة شمسياً</span>
+        </div>
+
+        <div class="product-card">
+            <img src="حليب.png" alt="حليب">
+            <span class="product-name">حليب ماعز طازج</span>
+        </div>
+    </div>
+
+    <div class="footer-nav">
+        <a href="index.html"><i class="fas fa-home" style="color: var(--theme-orange); font-size: 30px;"></i></a>
+    </div>
+
+    <script>
+        function openNav() { document.getElementById("mySidenav").style.width = "250px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+    </script>
+</body>
+</html>
