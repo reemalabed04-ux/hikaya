@@ -64,6 +64,36 @@
         .footer-banner { margin: 20px 0; text-align: center; }
         .footer-banner img { width: 100%; border-radius: 20px; }
         .footer-text { color: var(--middle-red); font-weight: bold; margin-top: 5px; }
+
+        /* تنسيقات اللابتوب لصفحة الشمال - نسخة مضمونة */
+@media (min-width: 1024px) {
+    body {
+        padding: 20px 12% !important; /* توسيط المحتوى */
+    }
+
+    /* استهداف الحاوية التي تضم الصور */
+    /* جربي الكلاسات المحتملة: .places-grid أو .grid-container أو .main-content */
+    .places-grid, .grid-container, .main-content, div[style*="display: grid"] { 
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 صور بجانب بعض */
+        gap: 30px !important;
+        padding-left: 60px !important; /* مسافة للباترن الجانبي */
+    }
+
+    /* منع التمطط نهائياً */
+    .places-grid img, .grid-container img, .place-card img, img {
+        width: 100% !important;
+        height: 280px !important; /* طول ثابت متناسق */
+        object-fit: cover !important; /* أهم خاصية لمنع التمطط */
+        border-radius: 20px !important;
+    }
+
+    /* تكبير البادج (العنوان الجانبي) */
+    .badge-text {
+        font-size: 22px !important;
+        padding: 10px 50px !important;
+    }
+}
     </style>
 </head>
 <body>
