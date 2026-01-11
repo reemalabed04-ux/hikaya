@@ -70,23 +70,32 @@
         .footer-banner img { width: 100%; border-radius: 20px; }
         .footer-text { color: var(--theme-orange); font-weight: bold; margin-top: 5px; font-size: 16px; }
 
-    @media (min-width: 1024px) {
-    /* جعل الصفحة في المنتصف مع هوامش مريحة */
+/* تنسيقات اللابتوب لصفحات المناطق */
+@media (min-width: 1024px) {
+    /* 1. إضافة هوامش جانبية لكي لا يلتصق المحتوى بالحواف */
     body {
-        padding: 20px 15% !important; 
+        padding: 20px 10% !important;
     }
 
-    /* إصلاح تمطط الصور */
-    img {
-        object-fit: cover !important; 
-    }
-
-    /* تحويل أي Scroll Container إلى شبكة ثابتة في اللابتوب */
-    .scroll-container, .workshops-grid, .events-grid, .tourism-grid {
+    /* 2. تعديل شبكة الصور (الجريد) */
+    .places-grid, .grid-container, .main-grid { 
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* 3 عناصر في الصف الواحد */
-        gap: 20px !important;
-        overflow: visible !important;
+        /* جعل الصور تترتب في 3 أو 4 أعمدة متساوية */
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 25px !important;
+    }
+
+    /* 3. منع تمطط الصور والحفاظ على جودتها */
+    .place-card img, .grid-item img, img {
+        height: 300px !important; /* طول ثابت ومناسب للابتوب */
+        width: 100% !important;
+        object-fit: cover !important; /* هذا يمنع المط تماماً */
+        border-radius: 20px !important;
+    }
+
+    /* 4. تعديل الباترن المنحني الجانبي ليبقى في مكانه */
+    .side-pattern {
+        width: 60px !important;
     }
 }
     </style>
