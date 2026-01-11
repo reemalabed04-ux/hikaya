@@ -8,17 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-
-        /* تنسيقات التلفون (الأساسية) */
-.card { width: 130px; }
-
-/* تنسيقات اللابتوب (تلقائياً بس يكبر الحجم) */
+/* تنسيقات خاصة فقط للشاشات الكبيرة (اللابتوب والكمبيوتر) */
 @media (min-width: 1024px) {
-    .card {
-        width: 300px; /* الصور بتكبر تلقائياً على اللابتوب */
+    
+    /* تكبير السلايدر العلوي ليتناسب مع عرض الشاشة */
+    .hero-section {
+        height: 450px; /* زيادة الطول ليناسب العرض الجديد */
     }
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr); /* بصير يعرض 4 كروت جنب بعض بدل 2 */
+
+    /* توزيع الكروت في صفوف أطول بدل التمرير الصغير */
+    .scroll-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* عرض 4 كروت بجانب بعض */
+        gap: 20px;
+        overflow: visible; /* إيقاف التمرير الجانبي في اللابتوب */
+    }
+
+    /* تكبير حجم الكروت مع الحفاظ على التناسب */
+    .card {
+        width: 100%; /* تأخذ عرض العمود في الجريد */
+        height: 250px; /* زيادة الطول بشكل متناسق مع العرض */
+        object-fit: cover; /* لضمان عدم تمطط الصورة */
+    }
+
+    /* تكبير الخريطة */
+    .map-section {
+        height: 400px;
+    }
+
+    /* توسيط المحتوى وجعله مريحاً للعين */
+    body {
+        padding: 20px 10%; /* إضافة هوامش كبيرة على الجوانب في اللابتوب */
     }
 } 
         :root {
@@ -277,5 +297,6 @@
     </script>
 </body>
 </html>
+
 
 
