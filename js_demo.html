@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيقات JavaScript - حكاية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #fff1d0;
+            --primary-yellow: #c5ac3b;
+            --theme-orange: #ea7424;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            text-align: center;
+            padding: 20px;
+            transition: 0.5s; /* لتنعيم تغيير لون الخلفية */
+        }
+        h1 { color: var(--primary-yellow); }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        button {
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--primary-yellow);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button:hover { opacity: 0.9; transform: scale(1.02); }
+        #display-area {
+            margin-top: 20px;
+            padding: 15px;
+            min-height: 50px;
+            background: white;
+            border-radius: 10px;
+            border: 2px dashed var(--primary-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>لوحة تحكم JavaScript</h1>
+    <p>اضغط على الأزرار لتجربة الوظائف البرمجية</p>
+
+    <div class="grid-container">
+        <button onclick="changeBg()">1. تغيير لون الخلفية</button>
+        
+        <button onclick="addNumbers()">2. آلة حاسبة (جمع)</button>
+        
+        <button onclick="showTime()">3. عرض الوقت الحالي</button>
+        
+        <button onclick="welcomeAlert()">4. رسالة ترحيب مخصصة</button>
+        
+        <button onclick="changeText()">5. تغيير نص العنوان</button>
+        
+        <button onclick="counterBtn()">6. عداد الضغطات (<span id="count">0</span>)</button>
+        
+        <button onclick="toggleBox()">7. إخفاء/إظهار النتيجة</button>
+        
+        <button onclick="randomNum()">8. رقم حظ عشوائي</button>
+        
+        <button onclick="goSouth()" style="background-color: var(--theme-orange);">9. الانتقال للجنوب</button>
+        
+        <button onclick="goHome()" style="background-color: #4a4a4a;">10. العودة للرئيسية</button>
+    </div>
+
+    <div id="display-area">
+        <p id="result-text">ستظهر النتائج هنا...</p>
+    </div>
+
+    <script>
+        // 1. وظيفة تغيير الخلفية
+        function changeBg() {
+            const colors = ['#f5e6bc', '#fff1d0', '#e6d5a7', '#dcdde1'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // 2. آلة حاسبة
+        function addNumbers() {
+            let n1 = prompt("أدخل الرقم الأول:");
+            let n2 = prompt("أدخل الرقم الثاني:");
+            let sum = Number(n1) + Number(n2);
+            document.getElementById('result-text').innerText = "مجموع الأرقام هو: " + sum;
+        }
+
+        // 3. عرض الوقت
+        function showTime() {
+            let now = new Date();
+            document.getElementById('result-text').innerText = "الوقت الآن: " + now.toLocaleTimeString();
+        }
+
+        // 4. رسالة ترحيب
+        function welcomeAlert() {
+            let name = prompt("ما اسمك؟");
+            alert("أهلاً بك يا " + name + " في مشروع حكاية!");
+        }
+
+        // 5. تغيير النص
+        function changeText() {
+            document.querySelector('h1').innerText = "تم التلاعب بالعنوان بواسطة JS!";
+        }
+
+        // 6. العداد
+        let count = 0;
+        function counterBtn() {
+            count++;
+            document.getElementById('count').innerText = count;
+        }
+
+        // 7. إخفاء وإظهار
+        function toggleBox() {
+            let x = document.getElementById("display-area");
+            x.style.display = (x.style.display === "none") ? "block" : "none";
+        }
+
+        // 8. رقم عشوائي
+        function randomNum() {
+            let rand = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('result-text').innerText = "رقم حظك اليوم هو: " + rand;
+        }
+
+        // 9. ربط مع الجنوب
+        function goSouth() {
+            window.location.href = "south.html";
+        }
+
+        // 10. ربط مع الرئيسية
+        function goHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
