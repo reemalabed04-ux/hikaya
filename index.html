@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
+
+        /* تنسيقات التلفون (الأساسية) */
+.card { width: 130px; }
+
+/* تنسيقات اللابتوب (تلقائياً بس يكبر الحجم) */
+@media (min-width: 1024px) {
+    .card {
+        width: 300px; /* الصور بتكبر تلقائياً على اللابتوب */
+    }
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr); /* بصير يعرض 4 كروت جنب بعض بدل 2 */
+    }
+} 
         :root {
             --bg-color: #fff1d0;
             --primary-yellow: #c5ac3b; /* اللون الكموني المطلوب */
@@ -264,4 +277,5 @@
     </script>
 </body>
 </html>
+
 
